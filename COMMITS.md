@@ -6,14 +6,14 @@
 ## Fase A — HTML semántico
 
 - [x] `chore: initial project setup with briefing and gitignore`
-- [ ] `feat(navbar): add semantic header with navbar, hamburger and CTA`
-- [ ] `feat(hero): add hero section with title, subtitle, CTAs and image`
-- [ ] `feat(features): add features grid with cards`
-- [ ] `feat(how-it-works): add three-step process section`
-- [ ] `feat(pricing): add three-tier pricing section`
-- [ ] `feat(testimonials): add testimonials section with user quotes`
-- [ ] `feat(cta): add final call-to-action section`
-- [ ] `feat(footer): add footer with columns and social links`
+- [x] `feat(navbar): add semantic header with navbar, hamburger and CTA`
+- [x] `feat(hero): add hero section with title, subtitle, CTAs and image`
+- [x] `feat(features): add features grid with cards`
+- [x] `feat(how-it-works): add three-step process section`
+- [x] `feat(pricing): add three-tier pricing section`
+- [x] `feat(testimonials): add testimonials section with user quotes`
+- [x] `feat(cta): add final call-to-action section`
+- [x] `feat(footer): add footer with columns and social links`
 
 ## Fase B — CSS base
 

@@ -1,0 +1,88 @@
+/* ============================================================
+   RESET CSS — basado en el reset moderno de Andy Bell
+   Apaga los defaults del navegador y crea base predecible.
+   ============================================================ */
+
+/* 1. Box-sizing universal: padding y border NO suman al ancho. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Resetea márgenes por defecto en todos los elementos. */
+* {
+  margin: 0;
+}
+
+/* 3. Cuerpo del documento: altura 100% y mejora de antialiasing. */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smopthing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 4. Imágenes y media: que no se desborden y que sean responsive. */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 5. Inputs: heredan la fuente del padre (por defecto traen una propia). */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 6. Texto largo: que no rompa el layout con palabras gigantes. */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 7. Listas: quita bullets/numeración por defecto. */
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+/* 8. Links: hereda color del texto, sin subrayado por defecto. */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 9. Botones: sin fondo ni borde, cursor de mano. */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* 10. Imágenes con alt vacío (decorativas) tienen tratamiento especial. */
+img[alt=""] {
+  filter: blur(0); /* evita warnings, asegura behavior consistente */
+}
+
+/* 11. Scroll suave a nivel de html para anchors. */
+html {
+  scroll-behavior: smooth;
+}
