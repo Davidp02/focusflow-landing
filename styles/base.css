@@ -1,0 +1,125 @@
+/* ============================================================
+   BASE STYLES — estilos globales del documento
+   Tipografía, colores base y comportamientos universales.
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   1. Body: la base de todo
+   ---------------------------------------------------------- */
+body {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ----------------------------------------------------------
+   2. Headings: jerarquía visual clara
+   ---------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-neutral-900);
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+}
+
+h3 {
+  font-size: var(--font-size-xl);
+}
+
+h4 {
+  font-size: var(--font-size-lg);
+}
+
+/* ----------------------------------------------------------
+   3. Párrafos: lectura cómoda
+   ---------------------------------------------------------- */
+p {
+  color: var(--color-text);
+  line-height: var(--line-height-normal);
+}
+
+/* ----------------------------------------------------------
+   4. Links: heredan color, transición suave en hover
+   ---------------------------------------------------------- */
+a {
+  color: var(--color-primary-600);
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-700);
+}
+
+/* ----------------------------------------------------------
+   5. Strong / em: pesos coherentes con el sistema
+   ---------------------------------------------------------- */
+strong {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-900);
+}
+
+em {
+  font-style: italic;
+}
+
+/* ----------------------------------------------------------
+   6. Selección de texto: usa el primary del brand
+   ---------------------------------------------------------- */
+::selection {
+  background-color: var(--color-primary-200);
+  color: var(--color-primary-900);
+}
+
+/* ----------------------------------------------------------
+   7. Focus visible: accesibilidad para navegación con teclado
+   ---------------------------------------------------------- */
+:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ----------------------------------------------------------
+   8. Inputs y forms: heredan el sistema tipográfico
+   ---------------------------------------------------------- */
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+  color: inherit;
+}
+
+/* ----------------------------------------------------------
+   9. Blockquote (los testimonios)
+   ---------------------------------------------------------- */
+blockquote {
+  font-style: italic;
+  color: var(--color-text);
+  line-height: var(--line-height-loose);
+}
+
+/* ----------------------------------------------------------
+   10. Cite (nombre del autor del testimonio)
+   ---------------------------------------------------------- */
+cite {
+  font-style: normal;
+  font-weight: var(--font-weight-semibold);
+}
