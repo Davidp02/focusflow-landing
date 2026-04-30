@@ -657,3 +657,68 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+/* ============================================================
+   CTA FINAL
+   ============================================================ */
+.cta-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-16) var(--space-8);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-700),
+    var(--color-primary-900)
+  );
+  border-radius: var(--radius-2xl);
+  text-align: center;
+  color: var(--color-surface);
+  box-shadow: var(--shadow-xl);
+}
+
+.cta-card__title {
+  font-size: clamp(var(--font-size-3xl), 4vw, var(--font-size-5xl));
+  line-height: var(--line-height-tight);
+  color: var(--color-surface);
+  max-width: 600px;
+}
+
+.cta-card__subtitle {
+  color: var(--color-primary-100);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-loose);
+  max-width: 540px;
+}
+
+.cta-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+/* Override de botones: contexto sobre fondo indigo oscuro */
+.cta-card .btn--primary {
+  background-color: var(--color-accent-500);
+  color: var(--color-neutral-900);
+  box-shadow: var(--shadow-md);
+}
+
+.cta-card .btn--primary:hover {
+  background-color: var(--color-accent-600);
+  color: var(--color-neutral-900);
+}
+
+.cta-card .btn--ghost {
+  background-color: transparent;
+  color: var(--color-surface);
+  border-color: var(--color-primary-200);
+}
+
+.cta-card .btn--ghost:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-surface);
+  border-color: var(--color-surface);
+}
