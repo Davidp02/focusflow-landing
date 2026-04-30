@@ -1,0 +1,49 @@
+/* ============================================================
+   LAYOUT — patrones de distribución reutilizables
+   Contenedores, espaciados estructurales, patrones de sección.
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   1. Container: limita ancho máximo y centra horizontalmente
+   ---------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+/* ----------------------------------------------------------
+   2. Padding vertical estándar para todas las secciones
+   ---------------------------------------------------------- */
+section {
+  padding-block: var(--space-16);
+}
+
+/* ----------------------------------------------------------
+   3. Section header (patrón reutilizado en cada sección)
+   eyebrow + título + subtítulo, todo centrado.
+   ---------------------------------------------------------- */
+.section-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  text-align: center;
+  max-width: 720px;
+  margin-inline: auto;
+  margin-bottom: var(--space-12);
+}
+
+.section-header__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-primary-600);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+}
+
+.section-header__subtitle {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-loose);
+}
