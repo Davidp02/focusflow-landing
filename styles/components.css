@@ -387,3 +387,186 @@
     gap: var(--space-8);
   }
 }
+/* ============================================================
+   PRICING
+   ============================================================ */
+.pricing__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: stretch;
+}
+
+.pricing-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: var(--space-8) var(--space-6);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Variante destacada (Pro) */
+.pricing-card--featured {
+  background: linear-gradient(
+    180deg,
+    var(--color-primary-700),
+    var(--color-primary-900)
+  );
+  border-color: var(--color-primary-600);
+  box-shadow: var(--shadow-xl);
+  color: var(--color-surface);
+}
+
+.pricing-card--featured .pricing-card__name,
+.pricing-card--featured .pricing-card__amount {
+  color: var(--color-surface);
+}
+
+.pricing-card--featured .pricing-card__description {
+  color: var(--color-primary-100);
+}
+
+.pricing-card--featured .pricing-card__period {
+  color: var(--color-primary-200);
+}
+
+.pricing-card--featured .pricing-card__features li {
+  color: var(--color-primary-100);
+}
+
+/* Badge "Más popular" */
+.pricing-card__badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  padding: var(--space-1) var(--space-4);
+  background-color: var(--color-accent-500);
+  color: var(--color-neutral-900);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+/* Header de la card */
+.pricing-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-bottom: var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.pricing-card--featured .pricing-card__header {
+  border-bottom-color: var(--color-primary-600);
+}
+
+.pricing-card__name {
+  font-size: var(--font-size-2xl);
+  color: var(--color-neutral-900);
+}
+
+.pricing-card__description {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.pricing-card__price {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-1);
+  margin-top: var(--space-3);
+}
+
+.pricing-card__amount {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-900);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.pricing-card__period {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+}
+
+/* Lista de features con checkmarks */
+.pricing-card__features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex: 1;
+}
+
+.pricing-card__features li {
+  position: relative;
+  padding-left: var(--space-6);
+  color: var(--color-text);
+  line-height: var(--line-height-normal);
+}
+
+.pricing-card__features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-600);
+  font-weight: var(--font-weight-bold);
+}
+
+.pricing-card--featured .pricing-card__features li::before {
+  color: var(--color-accent-400);
+}
+
+/* CTA empujado al fondo de la card */
+.pricing-card__cta {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* Botón primario invertido en card destacada */
+.pricing-card--featured .btn--primary {
+  background-color: var(--color-accent-500);
+  color: var(--color-neutral-900);
+}
+
+.pricing-card--featured .btn--primary:hover {
+  background-color: var(--color-accent-600);
+  color: var(--color-neutral-900);
+}
+
+/* Desktop: 3 columnas + card destacada elevada */
+@media (min-width: 768px) {
+  .pricing__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pricing-card--featured {
+    transform: scale(1.05);
+    z-index: 1;
+  }
+
+  .pricing-card--featured:hover {
+    transform: scale(1.05) translateY(-4px);
+  }
+}
