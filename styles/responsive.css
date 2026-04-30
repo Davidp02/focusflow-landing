@@ -49,3 +49,68 @@
     scroll-behavior: auto !important;
   }
 }
+/* ============================================================
+   ANIMATIONS — keyframes y reveal-on-scroll
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   Keyframes
+   ---------------------------------------------------------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ----------------------------------------------------------
+   Hero: entrada al cargar la página
+   ---------------------------------------------------------- */
+.hero__content {
+  animation: fadeInUp 800ms ease-out;
+}
+
+.hero__media {
+  animation: fadeInUp 800ms ease-out 200ms backwards;
+}
+
+/* ----------------------------------------------------------
+   Reveal-on-scroll: estado inicial oculto + transición.
+   JavaScript agregará la clase .is-visible cuando el
+   elemento entre al viewport (con IntersectionObserver).
+   ---------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 600ms ease-out,
+    transform 600ms ease-out;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ----------------------------------------------------------
+   Stagger delays: para cuando varios .reveal entran juntos
+   ---------------------------------------------------------- */
+.reveal--delay-1 {
+  transition-delay: 100ms;
+}
+
+.reveal--delay-2 {
+  transition-delay: 200ms;
+}
+
+.reveal--delay-3 {
+  transition-delay: 300ms;
+}
+
+.reveal--delay-4 {
+  transition-delay: 400ms;
+}
