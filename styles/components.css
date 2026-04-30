@@ -1,0 +1,175 @@
+/* ============================================================
+   COMPONENTS — estilos de cada componente reutilizable
+   ============================================================ */
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+/* Estructura base para cualquier botón */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+/* Variante PRIMARY: relleno indigo */
+.btn--primary {
+  background-color: var(--color-primary-600);
+  color: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-primary-700);
+  color: var(--color-surface);
+  box-shadow: var(--shadow-md);
+}
+
+/* Variante GHOST: solo borde, sin relleno */
+.btn--ghost {
+  background-color: transparent;
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.btn--ghost:hover {
+  background-color: var(--color-neutral-100);
+  color: var(--color-text);
+}
+
+/* Modificador LARGE: más padding y texto */
+.btn--large {
+  padding: var(--space-4) var(--space-6);
+  font-size: var(--font-size-lg);
+}
+
+/* ============================================================
+   SITE HEADER — sticky con borde inferior
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding-block: var(--space-3);
+}
+
+/* ============================================================
+   NAVBAR (mobile-first)
+   ============================================================ */
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: 100%;
+  max-width: var(--container-xl);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+.navbar__logo {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-700);
+}
+
+.navbar__logo:hover {
+  color: var(--color-primary-700);
+}
+
+/* Toggle hamburguesa: las 3 líneas */
+.navbar__toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  padding: 0;
+}
+
+.navbar__toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-neutral-800);
+  border-radius: var(--radius-full);
+  transition:
+    transform var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+/* Menú: oculto por defecto en mobile */
+.navbar__menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+}
+
+/* Estado abierto (lo activaremos con JS) */
+.navbar__menu.is-open {
+  display: flex;
+}
+
+.navbar__menu a {
+  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+  padding: var(--space-2) 0;
+}
+
+.navbar__menu a:hover {
+  color: var(--color-primary-700);
+}
+
+/* CTA del navbar: oculto en mobile, visible en desktop */
+.navbar__cta {
+  display: none;
+}
+
+/* Desktop breakpoint: a partir de 768px */
+@media (min-width: 768px) {
+  .navbar__toggle {
+    display: none;
+  }
+
+  .navbar__menu {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-6);
+    padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+  }
+
+  .navbar__menu a {
+    padding: 0;
+  }
+
+  .navbar__cta {
+    display: inline-flex;
+  }
+}
